@@ -8,7 +8,7 @@ f_quantile = {41: 4.07855, 40: 4.08475, 39: 4.09128, 38: 4.09817, 37: 4.10546, 3
 number = 43
 header = {0: "年份", 1: "财政收入", 2: "第一产业", 3: "工业总产值", 4: "建筑业总产值", 5: "社会商品零售总额", 6: "人口", 7: "受灾面积"}
 data = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: []}
-data_path = "data.csv"
+data_path = "../data.csv"
 f = open(data_path)
 f = csv.reader(f)
 rows = []
@@ -97,20 +97,20 @@ def dfs(k, select):
 
 
 if __name__ == "__main__":
-    # X = sm.add_constant(np.column_stack(x))
-    # model = sm.OLS(y, X)  # 最小二乘法
-    # res = model.fit()  # 拟合数据
-    # Bata = res.params  # 取系数
-    # print(res.summary())  # 结果
-    # print(res.f_pvalue)
-    # # print(X, y)
-    #
-    # Y = res.fittedvalues  # 预测值
-    # fig, ax = plt.subplots(figsize=(8, 6))
-    # ax.plot(np.linspace(1978, 2019, number), y, 'o', label='data')  # 原始数据
-    # ax.plot(np.linspace(1978, 2019, number), Y, 'r--.', label='test')  # 拟合数据
-    # ax.legend(loc='best')  # 展示各点表示意思，即label
-    # plt.show()
+    X = sm.add_constant(np.column_stack(x))
+    model = sm.OLS(y, X)  # 最小二乘法
+    res = model.fit()  # 拟合数据
+    Bata = res.params  # 取系数
+    print(res.summary())  # 结果
+    print(res.f_pvalue)
+    # print(X, y)
+
+    Y = res.fittedvalues  # 预测值
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.plot(np.linspace(1978, 2019, number), y, 'o', label='data')  # 原始数据
+    ax.plot(np.linspace(1978, 2019, number), Y, 'r--.', label='test')  # 拟合数据
+    ax.legend(loc='best')  # 展示各点表示意思，即label
+    plt.show()
 
     x = cc()
     for xx in x:
@@ -121,7 +121,7 @@ if __name__ == "__main__":
     print(res.summary())  # 结果
 
     Y = res.fittedvalues  # 预测值
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(6, 6))
     ax.plot(np.linspace(1978, 2019, number), y, 'o', label='data')  # 原始数据
     ax.plot(np.linspace(1978, 2019, number), Y, 'r--.', label='test')  # 拟合数据
     ax.legend(loc='best')  # 展示各点表示意思，即label
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     print(res.summary())  # 结果
 
     Y = res.fittedvalues  # 预测值
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(6, 6))
     ax.plot(np.linspace(1978, 2019, number), y, 'o', label='data')  # 原始数据
     ax.plot(np.linspace(1978, 2019, number), Y, 'r--.', label='test')  # 拟合数据
     ax.legend(loc='best')  # 展示各点表示意思，即label
